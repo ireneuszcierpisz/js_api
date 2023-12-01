@@ -13,14 +13,17 @@
       fetch("https://ci-swapi.herokuapp.com/api/")
         .then((response) => response.text()) // or .json()
         // .then((response) => response.json())
-        .then((data) => {
-          document.getElementById("content").innerText = data;
-          //   document.getElementById("content").innerText = data["people"];
-          //   document.getElementById("content").innerText = data.species;
-        })
+        .then((data) => displayData(data))
+        //   document.getElementById("content").innerText = data["people"];
+        //  { document.getElementById("content").innerText = data.species;
+        // })
         .catch((e) => {
           console.log("Error: ", e);
         });
+
+      function displayData(data) {
+        document.getElementById("content").innerText = data;
+      }
     </script>
   </body>
 </html>
